@@ -244,9 +244,9 @@ nav a[href*="index"]::after {
 }
 
 section {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 3rem auto;
-  padding: 2.5rem;
+  padding: 3rem;
   background: white;
   border-radius: 15px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
@@ -279,19 +279,22 @@ h2 {
 .academic-projects-grid,
 .professional-experiences-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 3rem;
   margin-top: 2rem;
+  margin-bottom: 3rem;
 }
 
 .project-card {
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   border-radius: 12px;
-  padding: 1.5rem;
+  padding: 2rem;
   transition: all 0.3s ease;
   border: 2px solid transparent;
   position: relative;
   overflow: hidden;
+  cursor: pointer;
+  margin-bottom: 1rem;
 }
 
 .project-card::before {
@@ -342,35 +345,53 @@ h2 {
   margin-right: 0.3rem;
 }
 
-/* Status Badges */
+/* Status Badges - Icon-based */
 .status-badge {
-  padding: 0.4rem 1rem;
-  border-radius: 20px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  white-space: nowrap;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  flex-shrink: 0;
 }
 
 .status-completed {
   background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-  color: white;
+}
+
+.status-completed::after {
+  content: '';
+  width: 12px;
+  height: 6px;
+  border-left: 3px solid white;
+  border-bottom: 3px solid white;
+  transform: rotate(-45deg);
+  margin-top: -2px;
 }
 
 .status-in-progress {
   background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-  color: white;
-  animation: pulse 2s ease-in-out infinite;
+  animation: rotate 2s linear infinite;
 }
 
-@keyframes pulse {
-  0%, 100% {
-    opacity: 1;
+.status-in-progress::after {
+  content: '';
+  width: 14px;
+  height: 14px;
+  border: 3px solid white;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-radius: 50%;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
   }
-  50% {
-    opacity: 0.8;
+  to {
+    transform: rotate(360deg);
   }
 }
 
@@ -408,6 +429,74 @@ h2 {
 
 .project-card a:hover::after {
   transform: translateX(5px);
+}
+
+/* Expandable Project Details */
+.project-card.expanded {
+  padding: 2.5rem;
+}
+
+.project-summary {
+  transition: all 0.3s ease;
+}
+
+.project-details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, padding 0.3s ease;
+  padding: 0;
+  margin-top: 0;
+}
+
+.project-card.expanded .project-details {
+  max-height: 2000px;
+  padding: 1.5rem 0 0 0;
+  margin-top: 1.5rem;
+  border-top: 2px solid rgba(102, 126, 234, 0.2);
+}
+
+.detail-row {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.detail-label {
+  font-weight: 700;
+  color: #1e3c72;
+  min-width: 120px;
+  font-size: 0.95rem;
+}
+
+.detail-value {
+  color: #555;
+  flex: 1;
+  line-height: 1.6;
+}
+
+.detail-value a {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.detail-value a:hover {
+  color: #764ba2;
+  text-decoration: underline;
+}
+
+.expand-icon {
+  display: inline-block;
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease;
+  font-size: 0.9em;
+  color: #667eea;
+}
+
+.project-card.expanded .expand-icon {
+  transform: rotate(180deg);
 }
 
 .skills-container {
@@ -615,13 +704,40 @@ footer {
       }
 
       .status-badge {
-        font-size: 0.7rem;
-        padding: 0.3rem 0.8rem;
+        width: 28px;
+        height: 28px;
+      }
+
+      .status-completed::after {
+        width: 10px;
+        height: 5px;
+        border-left-width: 2px;
+        border-bottom-width: 2px;
+      }
+
+      .status-in-progress::after {
+        width: 12px;
+        height: 12px;
+        border-width: 2px;
       }
 
       .academic-projects-grid,
       .professional-experiences-grid {
         grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .project-card {
+        padding: 1.5rem;
+      }
+
+      .detail-row {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .detail-label {
+        min-width: auto;
       }
     }
 
