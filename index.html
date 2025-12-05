@@ -5,8 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Oussama Aqebli - Portfolio Dashboard</title>
   <link rel="stylesheet" href="styles.css" />
+  <script src="translations.js"></script>
 </head>
 <body>
+  <div class="lang-switcher-container">
+    <button id="lang-switcher" class="lang-switcher" onclick="setLanguage(this.getAttribute('data-lang'))" data-lang="fr">FR</button>
+  </div>
   <header>
     <div class="header-content">
       <div class="profile-photo-container">
@@ -19,40 +23,40 @@
       </div>
       <div class="header-text">
         <h1>Oussama Aqebli</h1>
-        <p>AI & Machine Learning Student | Deep Learning Enthusiast</p>
+        <p data-i18n="header.subtitle">AI & Machine Learning Student | Deep Learning Enthusiast</p>
       </div>
     </div>
   </header>
 
   <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="projects.html">Projects</a>
-    <a href="skills.html">Skills</a>
-    <a href="#contact">Contact</a>
+    <a href="index.html" data-i18n="nav.home">Home</a>
+    <a href="about.html" data-i18n="nav.about">About</a>
+    <a href="projects.html" data-i18n="nav.projects">Projects</a>
+    <a href="skills.html" data-i18n="nav.skills">Skills</a>
+    <a href="#contact" data-i18n="nav.contact">Contact</a>
   </nav>
 
   <section id="welcome">
-    <h2>Welcome to My Portfolio</h2>
-    <p style="font-size: 1.2rem; color: #555; margin-bottom: 2rem;">
+    <h2 data-i18n="welcome.title">Welcome to My Portfolio</h2>
+    <p style="font-size: 1.2rem; color: #555; margin-bottom: 2rem;" data-i18n="welcome.description">
       Explore my work, skills, and journey in Artificial Intelligence and Machine Learning.
     </p>
   </section>
 
   <section id="about-preview">
-    <h2>About Me</h2>
-    <p>
+    <h2 data-i18n="aboutPreview.title">About Me</h2>
+    <p data-i18n="aboutPreview.description">
       I'm an engineering student in ENSICAEN, specializing in Artificial Intelligence and Machine Learning,
       with a strong focus on Deep Learning, Computer Vision and Video Games. I enjoy building neural networks, experimenting with
       cutting-edge models, and applying AI to real‑world problems.
     </p>
-    <a href="about.html" class="view-more-btn">Learn More About Me →</a>
+    <a href="about.html" class="view-more-btn" data-i18n="aboutPreview.button">Learn More About Me →</a>
   </section>
 
   <section id="projects-preview">
-    <h2>Featured Projects & Experiences</h2>
+    <h2 data-i18n="projectsPreview.title">Featured Projects & Experiences</h2>
     <p style="font-size: 1rem; color: #555; margin-bottom: 1.5rem;">
-      A selection of my academic projects and professional experiences. <a href="projects.html" style="color: #667eea; text-decoration: none;">View all →</a>
+      <span data-i18n="projectsPreview.description">A selection of my academic projects and professional experiences.</span> <a href="projects.html" style="color: #667eea; text-decoration: none;" data-i18n="projectsPreview.viewAll">View all →</a>
     </p>
     <div class="projects-grid">
       <div class="project-card">
@@ -61,7 +65,7 @@
           <span class="status-badge status-in-progress"></span>
         </div>
         <p>This applied research project, conducted at the GREYC Laboratory, sought to reimagine textile art using technology. By leveraging generative diffusion models, the project successfully created original-style tapestry pieces and explored the structuring of visual narrative sequences within the generated imagery.</p>
-        <a href="projects.html">View Details</a>
+        <a href="projects.html" data-i18n="projectsPreview.viewDetails">View Details</a>
       </div>
 
       <div class="project-card">
@@ -70,7 +74,7 @@
           <span class="status-badge status-completed"></span>
         </div>
         <p>A four-month internship within the Department of Robotics and Mathematics provided a comprehensive introduction to Reinforcement Learning (RL) under the direct supervision of university researchers and professors. The key technical achievement involved applying core RL concepts to simulated robot locomotion.</p>
-        <a href="projects.html">View Details</a>
+        <a href="projects.html" data-i18n="projectsPreview.viewDetails">View Details</a>
       </div>
 
       <div class="project-card">
@@ -79,16 +83,16 @@
           <span class="status-badge status-completed"></span>
         </div>
         <p>Developed along with a team of 4, a complete tournament management system for the virtual Blokus game to address and automate the organizational complexities of future ENSICAEN programming challenges. This robust platform centralizes all tournament organization, eliminating the time-consuming manual management of scores and matches.</p>
-        <a href="projects.html">View Details</a>
+        <a href="projects.html" data-i18n="projectsPreview.viewDetails">View Details</a>
       </div>
     </div>
     <div style="text-align: center; margin-top: 2rem;">
-      <a href="projects.html" class="view-more-btn">View All Projects & Experiences →</a>
+      <a href="projects.html" class="view-more-btn" data-i18n="projectsPreview.button">View All Projects & Experiences →</a>
     </div>
   </section>
 
   <section id="skills-preview">
-    <h2>Skills Overview</h2>
+    <h2 data-i18n="skillsPreview.title">Skills Overview</h2>
     <div class="skills-container">
       <span class="skill-badge">Deep Learning</span>
       <span class="skill-badge">Machine Learning</span>
@@ -96,42 +100,48 @@
       <span class="skill-badge">Generative AI</span>
       <span class="skill-badge">PyTorch</span>
       <span class="skill-badge">Optimization</span>
-      <span class="skill-badge">Python</span>
       <span class="skill-badge">C++</span>
     </div>
     <div style="text-align: center; margin-top: 2rem;">
-      <a href="skills.html" class="view-more-btn">View All Skills →</a>
+      <a href="skills.html" class="view-more-btn" data-i18n="skillsPreview.button">View All Skills →</a>
     </div>
   </section>
 
   <section id="contact">
-    <h2>Contact</h2>
+    <h2 data-i18n="contact.title">Contact</h2>
     <div class="contact-info">
       <div class="contact-item">
-        <strong>Email:</strong>
+        <strong data-i18n="contact.email">Email:</strong>
         <a href="mailto:oussamaaqebli0628@gmail.com">oussamaaqebli0628@gmail.com</a>
       </div>
       <div class="contact-item">
-        <strong>GitHub:</strong>
+        <strong data-i18n="contact.github">GitHub:</strong>
         <a href="https://github.com/OussAQ" target="_blank">github.com/OussAQ</a>
       </div>
       <div class="contact-item">
-        <strong>LinkedIn:</strong>
+        <strong data-i18n="contact.linkedin">LinkedIn:</strong>
         <a href="https://www.linkedin.com/in/oussama-aqebli" target="_blank">linkedin.com/in/oussama-aqebli</a>
       </div>
       <div class="contact-item contact-phone">
-        <strong>Phone:</strong>
+        <strong data-i18n="contact.phone">Phone:</strong>
         <span class="contact-value">+33 6 18 37 01 46</span>
       </div>
       <div class="contact-item contact-location">
-        <strong>Location:</strong>
+        <strong data-i18n="contact.location">Location:</strong>
         <span class="contact-value">Caen, France</span>
       </div>
     </div>
   </section>
 
   <footer>
-    <p>© 2025 Oussama Aqebli. All rights reserved.</p>
+    <p data-i18n="footer.copyright">© 2025 Oussama Aqebli. All rights reserved.</p>
   </footer>
+
+  <script>
+    // Initialize language on page load
+    if (typeof initLanguage === 'function') {
+      initLanguage();
+    }
+  </script>
 </body>
 </html>

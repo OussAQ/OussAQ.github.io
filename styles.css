@@ -20,68 +20,97 @@ body {
   overflow-x: hidden;
 }
 
-/* Animated background pattern */
+/* Animated mesh gradient background */
 body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 200%;
-  height: 200%;
-  background: 
-    repeating-linear-gradient(
-      45deg,
-      transparent,
-      transparent 50px,
-      rgba(255, 255, 255, 0.03) 50px,
-      rgba(255, 255, 255, 0.03) 100px
-    ),
-    repeating-linear-gradient(
-      -45deg,
-      transparent,
-      transparent 50px,
-      rgba(255, 255, 255, 0.03) 50px,
-      rgba(255, 255, 255, 0.03) 100px
-    );
-  animation: movePattern 20s linear infinite;
-  z-index: 0;
-  pointer-events: none;
-}
-
-/* Moving shade overlay */
-body::after {
   content: '';
   position: fixed;
   top: -50%;
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(
-    circle at 30% 50%,
-    rgba(255, 255, 255, 0.1) 0%,
-    transparent 50%
-  );
-  animation: moveShade 15s ease-in-out infinite alternate;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(102, 126, 234, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(118, 75, 162, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(102, 126, 234, 0.2) 0%, transparent 50%);
+  animation: meshMove 20s ease-in-out infinite;
   z-index: 0;
   pointer-events: none;
 }
 
-@keyframes movePattern {
-  0% {
-    transform: translate(0, 0);
+/* Subtle grid overlay */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 50px 50px;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+@keyframes meshMove {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
   }
-  100% {
-    transform: translate(-50px, -50px);
+  25% {
+    transform: translate(5%, 5%) scale(1.1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translate(-3%, 8%) scale(1.05);
+    opacity: 1;
+  }
+  75% {
+    transform: translate(8%, -3%) scale(1.08);
+    opacity: 0.95;
   }
 }
 
-@keyframes moveShade {
-  0% {
-    transform: translate(0, 0) scale(1);
-  }
-  100% {
-    transform: translate(100px, 100px) scale(1.2);
-  }
+/* Language Switcher */
+.lang-switcher-container {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 1000;
+}
+
+.lang-switcher {
+  background: rgba(15, 15, 20, 0.95);
+  color: #a0a0ff;
+  border: 1px solid rgba(102, 126, 234, 0.4);
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  font-family: 'Courier New', 'Consolas', monospace;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.lang-switcher:hover {
+  background: rgba(102, 126, 234, 0.2);
+  border-color: rgba(102, 126, 234, 0.6);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 
+    0 4px 15px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(102, 126, 234, 0.3);
+  text-shadow: 0 0 10px rgba(102, 126, 234, 0.8);
+}
+
+.lang-switcher:active {
+  transform: translateY(0);
 }
 
 header {
@@ -186,7 +215,7 @@ header::before {
   bottom: 0;
   background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
   opacity: 0.4;
-  animation: movePattern 25s linear infinite;
+  pointer-events: none;
 }
 
 header::after {
@@ -847,6 +876,16 @@ footer {
 }
 
 @media (max-width: 768px) {
+  .lang-switcher-container {
+    top: 1rem;
+    right: 1rem;
+  }
+
+  .lang-switcher {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+
   .header-content {
     flex-direction: column;
     gap: 2rem;
