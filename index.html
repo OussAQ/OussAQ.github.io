@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Oussama Aqebli - Portfolio</title>
+  <title>Oussama Aqebli - Portfolio Dashboard</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -13,23 +13,32 @@
   </header>
 
   <nav>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#skills">Skills</a>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="skills.html">Skills</a>
     <a href="#contact">Contact</a>
   </nav>
 
-  <section id="about">
+  <section id="welcome">
+    <h2>Welcome to My Portfolio</h2>
+    <p style="font-size: 1.2rem; color: #555; margin-bottom: 2rem;">
+      Explore my work, skills, and journey in Artificial Intelligence and Machine Learning.
+    </p>
+  </section>
+
+  <section id="about-preview">
     <h2>About Me</h2>
     <p>
       I'm an engineering student in ENSICAEN, specializing in Artificial Intelligence and Machine Learning,
       with a strong focus on Deep Learning, Computer Vision and Video Games. I enjoy building neural networks, experimenting with
       cutting-edge models, and applying AI to real‑world problems.
     </p>
+    <a href="about.html" class="view-more-btn">Learn More About Me →</a>
   </section>
 
-  <section id="projects">
-    <h2>Projects</h2>
+  <section id="projects-preview">
+    <h2>Featured Projects</h2>
     <div class="projects-grid">
       <div class="project-card">
         <h3>Project Title 1</h3>
@@ -49,10 +58,13 @@
         <a href="https://github.com/OussAQ/project3">View on GitHub</a>
       </div>
     </div>
+    <div style="text-align: center; margin-top: 2rem;">
+      <a href="projects.html" class="view-more-btn">View All Projects →</a>
+    </div>
   </section>
 
-  <section id="skills">
-    <h2>Skills</h2>
+  <section id="skills-preview">
+    <h2>Skills Overview</h2>
     <div class="skills-container">
       <span class="skill-badge">Python</span>
       <span class="skill-badge">NumPy</span>
@@ -62,10 +74,9 @@
       <span class="skill-badge">Deep Learning</span>
       <span class="skill-badge">Machine Learning</span>
       <span class="skill-badge">Computer Vision</span>
-      <span class="skill-badge">Data Visualization</span>
-      <span class="skill-badge">Model Training</span>
-      <span class="skill-badge">Neural Networks</span>
-      <span class="skill-badge">Optimization</span>
+    </div>
+    <div style="text-align: center; margin-top: 2rem;">
+      <a href="skills.html" class="view-more-btn">View All Skills →</a>
     </div>
   </section>
 

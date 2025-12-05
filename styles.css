@@ -186,7 +186,9 @@ nav a:hover {
    ============================================ */
 
 /* Navigation icons - CSS-based */
-nav a[href="#about"]::after {
+nav a[href="#about"]::after,
+nav a[href="about.html"]::after,
+nav a[href*="about"]::after {
   content: '';
   display: inline-block;
   width: 8px;
@@ -197,7 +199,9 @@ nav a[href="#about"]::after {
   vertical-align: middle;
 }
 
-nav a[href="#projects"]::after {
+nav a[href="#projects"]::after,
+nav a[href="projects.html"]::after,
+nav a[href*="projects"]::after {
   content: '';
   display: inline-block;
   width: 0;
@@ -209,18 +213,34 @@ nav a[href="#projects"]::after {
   vertical-align: middle;
 }
 
-nav a[href="#skills"]::after {
+nav a[href="#skills"]::after,
+nav a[href="skills.html"]::after,
+nav a[href*="skills"]::after {
   content: '⚡';
   margin-left: 0.5rem;
   font-size: 0.9em;
   vertical-align: middle;
 }
 
-nav a[href="#contact"]::after {
+nav a[href="#contact"]::after,
+nav a[href*="contact"]::after {
   content: '@';
   margin-left: 0.5rem;
   font-size: 0.9em;
   vertical-align: middle;
+}
+
+nav a[href="index.html"]::after,
+nav a[href="/"]::after,
+nav a[href*="index"]::after {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: white;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
 }
 
 section {
@@ -437,6 +457,26 @@ h2 {
   background: #f0f0f0;
   color: #764ba2;
   transform: translateY(-2px);
+}
+
+/* View More Button */
+.view-more-btn {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  margin-top: 1rem;
+}
+
+.view-more-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
 }
 
 footer {
