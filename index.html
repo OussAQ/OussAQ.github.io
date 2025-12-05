@@ -3,59 +3,321 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Portfolio</title>
+  <title>Oussama Aqebli - Portfolio</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    * {
       margin: 0;
       padding: 0;
-      background: #f9fafb;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background-attachment: fixed;
       color: #111;
+      line-height: 1.6;
     }
+
     header {
-      background: #111827;
+      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
       color: white;
-      padding: 2rem;
+      padding: 4rem 2rem;
       text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      position: relative;
+      overflow: hidden;
     }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+      opacity: 0.3;
+    }
+
     header h1 {
       margin: 0;
-      font-size: 2.5rem;
+      font-size: 3rem;
+      font-weight: 700;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      position: relative;
+      z-index: 1;
+      animation: fadeInDown 1s ease-out;
     }
+
+    header p {
+      margin-top: 1rem;
+      font-size: 1.3rem;
+      opacity: 0.95;
+      position: relative;
+      z-index: 1;
+      animation: fadeInUp 1s ease-out;
+    }
+
     nav {
-      background: #1f2937;
-      padding: 1rem;
+      background: rgba(30, 30, 30, 0.95);
+      padding: 1.2rem;
       text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
     }
+
     nav a {
       color: white;
-      margin: 0 1rem;
+      margin: 0 1.5rem;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      display: inline-block;
     }
+
+    nav a:hover {
+      background: rgba(255,255,255,0.1);
+      transform: translateY(-2px);
+    }
+
     section {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 1rem;
+      max-width: 1100px;
+      margin: 3rem auto;
+      padding: 2.5rem;
       background: white;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      animation: fadeIn 0.8s ease-out;
     }
+
     h2 {
-      border-left: 4px solid #2563eb;
-      padding-left: 0.5rem;
+      border-left: 5px solid #667eea;
+      padding-left: 1rem;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+      color: #1e3c72;
     }
-    .project {
-      margin-bottom: 1.5rem;
-      padding-bottom: 1rem;
-      border-bottom: 1px solid #e5e7eb;
+
+    #about p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #444;
     }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .project-card {
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      border-radius: 12px;
+      padding: 1.5rem;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #667eea, #764ba2);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+      border-color: #667eea;
+    }
+
+    .project-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .project-card h3 {
+      color: #1e3c72;
+      margin-bottom: 0.8rem;
+      font-size: 1.4rem;
+    }
+
+    .project-card p {
+      color: #555;
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    .project-card a {
+      color: #667eea;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .project-card a:hover {
+      color: #764ba2;
+      transform: translateX(5px);
+    }
+
+    .project-card a::after {
+      content: '→';
+      transition: transform 0.3s ease;
+    }
+
+    .project-card a:hover::after {
+      transform: translateX(5px);
+    }
+
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .skill-badge {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 0.7rem 1.5rem;
+      border-radius: 25px;
+      font-weight: 600;
+      box-shadow: 0 4px 10px rgba(102, 126, 234, 0.3);
+      transition: all 0.3s ease;
+      font-size: 0.95rem;
+    }
+
+    .skill-badge:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 6px 15px rgba(102, 126, 234, 0.4);
+    }
+
+    #contact {
+      text-align: center;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .contact-item a {
+      color: #667eea;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+    }
+
+    .contact-item a:hover {
+      background: #f0f0f0;
+      color: #764ba2;
+      transform: translateY(-2px);
+    }
+
     footer {
       text-align: center;
-      padding: 2rem;
-      background: #111827;
+      padding: 2.5rem;
+      background: rgba(30, 30, 30, 0.95);
       color: white;
-      margin-top: 3rem;
+      margin-top: 4rem;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      header p {
+        font-size: 1rem;
+      }
+
+      nav a {
+        margin: 0 0.5rem;
+        font-size: 0.9rem;
+        padding: 0.4rem 0.6rem;
+      }
+
+      section {
+        margin: 2rem 1rem;
+        padding: 1.5rem;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-item {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
     }
   </style>
 </head>
@@ -83,40 +345,65 @@
 
   <section id="projects">
     <h2>Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3>Project Title 1</h3>
+        <p>Short description of your AI/ML or deep learning project. Describe what technologies you used and what problem it solves.</p>
+        <a href="https://github.com/OussAQ/project1">View on GitHub</a>
+      </div>
 
-    <div class="project">
-      <h3>Project Title 1</h3>
-      <p>Short description of your AI/ML or deep learning project.</p>
-      <a href="https://github.com/yourusername/project1">GitHub Repo</a>
-    </div>
+      <div class="project-card">
+        <h3>Project Title 2</h3>
+        <p>Another project description. Explain the key features, your approach, and the results achieved.</p>
+        <a href="https://github.com/OussAQ/project2">View on GitHub</a>
+      </div>
 
-    <div class="project">
-      <h3>Project Title 2</h3>
-      <p>Another project description.</p>
-      <a href="https://github.com/yourusername/project2">GitHub Repo</a>
+      <div class="project-card">
+        <h3>Project Title 3</h3>
+        <p>Add more projects to showcase your work. Each project card can highlight different aspects of your skills.</p>
+        <a href="https://github.com/OussAQ/project3">View on GitHub</a>
+      </div>
     </div>
   </section>
 
   <section id="skills">
     <h2>Skills</h2>
-    <ul>
-      <li>Python, NumPy, Pandas</li>
-      <li>Deep Learning: PyTorch, TensorFlow</li>
-      <li>Machine Learning Algorithms</li>
-      <li>Data Visualization</li>
-      <li>Model Training & Optimization</li>
-    </ul>
+    <div class="skills-container">
+      <span class="skill-badge">Python</span>
+      <span class="skill-badge">NumPy</span>
+      <span class="skill-badge">Pandas</span>
+      <span class="skill-badge">PyTorch</span>
+      <span class="skill-badge">TensorFlow</span>
+      <span class="skill-badge">Deep Learning</span>
+      <span class="skill-badge">Machine Learning</span>
+      <span class="skill-badge">Computer Vision</span>
+      <span class="skill-badge">Data Visualization</span>
+      <span class="skill-badge">Model Training</span>
+      <span class="skill-badge">Neural Networks</span>
+      <span class="skill-badge">Optimization</span>
+    </div>
   </section>
 
   <section id="contact">
     <h2>Contact</h2>
-    <p>Email: oussamaaqebli0628@gmail.com</p>
-    <p>GitHub: <a href="https://github.com/OussAQ">github.com/OussAQ</a></p>
-    <p>LinkedIn: <a href="#">www.linkedin.com/in/oussama-aqebli</a></p>
+    <div class="contact-info">
+      <div class="contact-item">
+        <strong>Email:</strong>
+        <a href="mailto:oussamaaqebli0628@gmail.com">oussamaaqebli0628@gmail.com</a>
+      </div>
+      <div class="contact-item">
+        <strong>GitHub:</strong>
+        <a href="https://github.com/OussAQ" target="_blank">github.com/OussAQ</a>
+      </div>
+      <div class="contact-item">
+        <strong>LinkedIn:</strong>
+        <a href="https://www.linkedin.com/in/oussama-aqebli" target="_blank">linkedin.com/in/oussama-aqebli</a>
+      </div>
+    </div>
   </section>
 
   <footer>
-    <p>© 2025 Oussama Aqebli</p>
+    <p>© 2025 Oussama Aqebli. All rights reserved.</p>
   </footer>
 </body>
 </html>
