@@ -171,25 +171,56 @@ nav a:hover {
   transform: translateY(-2px);
 }
 
-/* Navigation icons */
+/* ============================================
+   ICON CUSTOMIZATION GUIDE
+   ============================================
+   You can easily customize icons by changing the 'content' property.
+   
+   Options:
+   - Unicode symbols: '→', '▶', '◉', '●', '◆', '■', '▲', etc.
+   - CSS shapes: Use border/background properties (see examples below)
+   - Text: '@', '#', '*', etc.
+   - Remove icon: Set content: '' and remove other properties
+   
+   For more icons, you can also use Font Awesome or other icon libraries.
+   ============================================ */
+
+/* Navigation icons - CSS-based */
 nav a[href="#about"]::after {
-  content: ' 👤';
-  margin-left: 0.3rem;
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+  margin-left: 0.5rem;
+  vertical-align: middle;
 }
 
 nav a[href="#projects"]::after {
-  content: ' 💼';
-  margin-left: 0.3rem;
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 5px solid white;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  margin-left: 0.5rem;
+  vertical-align: middle;
 }
 
 nav a[href="#skills"]::after {
-  content: ' ⚡';
-  margin-left: 0.3rem;
+  content: '⚡';
+  margin-left: 0.5rem;
+  font-size: 0.9em;
+  vertical-align: middle;
 }
 
 nav a[href="#contact"]::after {
-  content: ' 📧';
-  margin-left: 0.3rem;
+  content: '@';
+  margin-left: 0.5rem;
+  font-size: 0.9em;
+  vertical-align: middle;
 }
 
 section {
@@ -264,7 +295,10 @@ h2 {
 }
 
 .project-card h3::before {
-  content: '🚀 ';
+  content: '▶ ';
+  color: #667eea;
+  font-size: 0.8em;
+  margin-right: 0.3rem;
 }
 
 .project-card p {
@@ -284,7 +318,9 @@ h2 {
 }
 
 .project-card a::before {
-  content: '🔗 ';
+  content: '↗';
+  margin-right: 0.3rem;
+  font-size: 1.1em;
 }
 
 .project-card a:hover {
@@ -378,15 +414,23 @@ h2 {
 
 /* Contact icons */
 .contact-item a[href^="mailto"]::before {
-  content: '📧 ';
+  content: '@';
+  margin-right: 0.3rem;
+  font-weight: normal;
 }
 
 .contact-item a[href*="github"]::before {
-  content: '🐙 ';
+  content: '◉';
+  margin-right: 0.3rem;
+  font-size: 0.9em;
+  color: #667eea;
 }
 
 .contact-item a[href*="linkedin"]::before {
-  content: '💼 ';
+  content: '◉';
+  margin-right: 0.3rem;
+  font-size: 0.9em;
+  color: #667eea;
 }
 
 .contact-item a:hover {
