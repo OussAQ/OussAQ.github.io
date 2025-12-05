@@ -678,6 +678,32 @@ h2 {
   transform: translateY(-2px);
 }
 
+.contact-value {
+  color: #555;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Phone icon - Text symbol */
+.contact-phone .contact-value::before {
+  content: '✆';
+  margin-right: 0.5rem;
+  font-size: 1em;
+  color: #667eea;
+}
+
+/* Location icon - Text symbol */
+.contact-location .contact-value::before {
+  content: '◉';
+  margin-right: 0.5rem;
+  font-size: 0.9em;
+  color: #667eea;
+}
+
 /* View More Button */
 .view-more-btn {
   display: inline-block;
