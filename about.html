@@ -5,51 +5,55 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Me - Oussama Aqebli</title>
   <link rel="stylesheet" href="styles.css" />
+  <script src="translations.js"></script>
 </head>
 <body>
+  <div class="lang-switcher-container">
+    <button id="lang-switcher" class="lang-switcher" onclick="setLanguage(this.getAttribute('data-lang'))" data-lang="fr">FR</button>
+  </div>
   <header>
     <h1>Oussama Aqebli</h1>
-    <p>AI & Machine Learning Student | Deep Learning Enthusiast</p>
+    <p data-i18n="header.subtitle">AI & Machine Learning Student | Deep Learning Enthusiast</p>
   </header>
 
   <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="projects.html">Projects</a>
-    <a href="skills.html">Skills</a>
-    <a href="index.html#contact">Contact</a>
+    <a href="index.html" data-i18n="nav.home">Home</a>
+    <a href="about.html" data-i18n="nav.about">About</a>
+    <a href="projects.html" data-i18n="nav.projects">Projects</a>
+    <a href="skills.html" data-i18n="nav.skills">Skills</a>
+    <a href="index.html#contact" data-i18n="nav.contact">Contact</a>
   </nav>
 
   <section id="about">
-    <h2>About Me</h2>
+    <h2 data-i18n="about.title">About Me</h2>
     <div style="font-size: 1.1rem; line-height: 1.8; color: #444;">
-      <p style="margin-bottom: 1.5rem;">
+      <p style="margin-bottom: 1.5rem;" data-i18n="about.intro">
         I'm an engineering student in ENSICAEN, specializing in Artificial Intelligence and Machine Learning,
         with a strong focus on Deep Learning, Computer Vision and Video Games. I enjoy building neural networks, experimenting with
         cutting-edge models, and applying AI to real‑world problems.
       </p>
       
-      <h3 style="color: #1e3c72; margin-top: 2rem; margin-bottom: 1rem;">My Journey</h3>
-      <p style="margin-bottom: 1.5rem;">
+      <h3 style="color: #1e3c72; margin-top: 2rem; margin-bottom: 1rem;" data-i18n="about.journey.title">My Journey</h3>
+      <p style="margin-bottom: 1.5rem;" data-i18n="about.journey.description">
         My passion for artificial intelligence began during my studies at ENSICAEN, where I discovered the fascinating world of machine learning and deep learning. I've been actively working on projects that combine theoretical knowledge with practical applications.
       </p>
 
-      <h3 style="color: #1e3c72; margin-top: 2rem; margin-bottom: 1rem;">Interests & Focus Areas</h3>
+      <h3 style="color: #1e3c72; margin-top: 2rem; margin-bottom: 1rem;" data-i18n="about.interests.title">Interests & Focus Areas</h3>
       <ul style="margin-left: 2rem; margin-bottom: 1.5rem; line-height: 2;">
-        <li><strong>Deep Learning:</strong> Building and training neural networks for various applications</li>
-        <li><strong>Computer Vision:</strong> Image processing, object detection, and visual recognition systems</li>
-        <li><strong>Video Games:</strong> Applying AI techniques to game development and intelligent game agents</li>
-        <li><strong>Research:</strong> Exploring cutting-edge models and staying updated with the latest AI advancements</li>
+        <li><strong data-i18n="about.interests.deepLearning">Deep Learning:</strong> <span data-i18n="about.interests.deepLearningDesc">Building and training neural networks for various applications</span></li>
+        <li><strong data-i18n="about.interests.computerVision">Computer Vision:</strong> <span data-i18n="about.interests.computerVisionDesc">Image processing, object detection, and visual recognition systems</span></li>
+        <li><strong data-i18n="about.interests.videoGames">Video Games:</strong> <span data-i18n="about.interests.videoGamesDesc">Applying AI techniques to game development and intelligent game agents</span></li>
+        <li><strong data-i18n="about.interests.research">Research:</strong> <span data-i18n="about.interests.researchDesc">Exploring cutting-edge models and staying updated with the latest AI advancements</span></li>
       </ul>
       
-      <h3 style="color: #1e3c72; margin-top: 2rem; margin-bottom: 1rem;">Hobbies</h3>
-      <p style="margin-bottom: 1.5rem;">
+      <h3 style="color: #1e3c72; margin-top: 2rem; margin-bottom: 1rem;" data-i18n="about.hobbies.title">Hobbies</h3>
+      <p style="margin-bottom: 1.5rem;" data-i18n="about.hobbies.description">
         I like to play volleyball and do martial arts, I also love playing chess and video-games,
         I am always eager to travel and discover new cultures, meet up with friends and try new things.
       </p>
 
-      <h3 style="color: #1e3c72; margin-top: 2rem; margin-bottom: 1rem;">What I Do</h3>
-      <p style="margin-bottom: 1.5rem;">
+      <h3 style="color: #1e3c72; margin-top: 2rem; margin-bottom: 1rem;" data-i18n="about.whatIDo.title">What I Do</h3>
+      <p style="margin-bottom: 1.5rem;" data-i18n="about.whatIDo.description">
         I spend my time experimenting with different neural network architectures, working on computer vision projects, 
         and developing AI solutions for real-world challenges. I'm always eager to learn new technologies and 
         collaborate on interesting projects that push the boundaries of what's possible with AI.
@@ -57,14 +61,21 @@
     </div>
     
     <div style="text-align: center; margin-top: 3rem;">
-      <a href="projects.html" class="view-more-btn">View My Projects →</a>
-      <a href="skills.html" class="view-more-btn" style="margin-left: 1rem;">See My Skills →</a>
+      <a href="projects.html" class="view-more-btn" data-i18n="about.viewProjects">View My Projects →</a>
+      <a href="skills.html" class="view-more-btn" style="margin-left: 1rem;" data-i18n="about.seeSkills">See My Skills →</a>
     </div>
   </section>
 
   <footer>
-    <p>© 2025 Oussama Aqebli. All rights reserved.</p>
+    <p data-i18n="footer.copyright">© 2025 Oussama Aqebli. All rights reserved.</p>
   </footer>
+
+  <script>
+    // Initialize language on page load
+    if (typeof initLanguage === 'function') {
+      initLanguage();
+    }
+  </script>
 </body>
 </html>
 
