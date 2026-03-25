@@ -11,6 +11,7 @@
   --theme-orange: #d46504;
   --theme-orange-soft: #f29c4b;
   --theme-cream: #fff3e6;
+  --theme-diamond-cream: #f3dfc6;
   --theme-surface: rgba(255, 247, 239, 0.95);
   --theme-surface-strong: #fff8f1;
   --theme-border: rgba(212, 101, 4, 0.26);
@@ -237,21 +238,21 @@ header {
 header::before {
   content: '';
   position: absolute;
-  left: 0;
-  bottom: 0;
-  width: min(680px, 60%);
-  height: 78%;
+  inset: 0;
   background:
-    repeating-linear-gradient(45deg, transparent 0 30px, rgba(212, 101, 4, 0.7) 30px 33px, transparent 33px 63px),
-    repeating-linear-gradient(-45deg, transparent 0 30px, rgba(0, 48, 107, 0.68) 30px 33px, transparent 33px 63px),
-    repeating-linear-gradient(45deg, transparent 0 20px, rgba(212, 101, 4, 0.45) 20px 22px, transparent 22px 42px),
-    repeating-linear-gradient(-45deg, transparent 0 20px, rgba(0, 48, 107, 0.42) 20px 22px, transparent 22px 42px),
-    repeating-linear-gradient(45deg, transparent 0 13px, rgba(212, 101, 4, 0.3) 13px 14px, transparent 14px 27px),
-    repeating-linear-gradient(-45deg, transparent 0 13px, rgba(0, 48, 107, 0.28) 13px 14px, transparent 14px 27px);
-  clip-path: polygon(0 100%, 0 0, 88% 0, 100% 30%, 78% 66%, 55% 100%);
-  mask-image: radial-gradient(circle at 0 100%, rgba(0, 0, 0, 0.97) 0 26%, rgba(0, 0, 0, 0.82) 44%, rgba(0, 0, 0, 0.36) 63%, transparent 83%);
-  -webkit-mask-image: radial-gradient(circle at 0 100%, rgba(0, 0, 0, 0.97) 0 26%, rgba(0, 0, 0, 0.82) 44%, rgba(0, 0, 0, 0.36) 63%, transparent 83%);
-  opacity: 0.92;
+    repeating-linear-gradient(45deg, transparent 0 31px, rgba(243, 223, 198, 0.95) 31px 34px, transparent 34px 65px),
+    repeating-linear-gradient(-45deg, transparent 0 31px, rgba(243, 223, 198, 0.95) 31px 34px, transparent 34px 65px),
+    repeating-linear-gradient(45deg, transparent 0 20px, rgba(243, 223, 198, 0.7) 20px 22px, transparent 22px 42px),
+    repeating-linear-gradient(-45deg, transparent 0 20px, rgba(243, 223, 198, 0.7) 20px 22px, transparent 22px 42px),
+    repeating-linear-gradient(45deg, transparent 0 13px, rgba(243, 223, 198, 0.48) 13px 14px, transparent 14px 27px),
+    repeating-linear-gradient(-45deg, transparent 0 13px, rgba(243, 223, 198, 0.48) 13px 14px, transparent 14px 27px);
+  mask-image:
+    radial-gradient(circle at 0 100%, rgba(0, 0, 0, 0.98) 0 23%, rgba(0, 0, 0, 0.85) 38%, rgba(0, 0, 0, 0.58) 55%, rgba(0, 0, 0, 0.24) 70%, transparent 87%),
+    linear-gradient(45deg, rgba(0, 0, 0, 0.98) 0 58%, rgba(0, 0, 0, 0.55) 74%, transparent 92%);
+  -webkit-mask-image:
+    radial-gradient(circle at 0 100%, rgba(0, 0, 0, 0.98) 0 23%, rgba(0, 0, 0, 0.85) 38%, rgba(0, 0, 0, 0.58) 55%, rgba(0, 0, 0, 0.24) 70%, transparent 87%),
+    linear-gradient(45deg, rgba(0, 0, 0, 0.98) 0 58%, rgba(0, 0, 0, 0.55) 74%, transparent 92%);
+  opacity: 0.88;
   z-index: 0;
   pointer-events: none;
 }
@@ -259,19 +260,18 @@ header::before {
 header::after {
   content: '';
   position: absolute;
-  top: 0;
+  top: -2%;
   right: 0;
-  width: min(420px, 34%);
-  height: 54%;
+  width: min(380px, 32%);
+  height: 46%;
   background:
-    repeating-linear-gradient(45deg, transparent 0 24px, rgba(0, 48, 107, 0.55) 24px 26px, transparent 26px 50px),
-    repeating-linear-gradient(-45deg, transparent 0 24px, rgba(212, 101, 4, 0.58) 24px 26px, transparent 26px 50px),
-    repeating-linear-gradient(45deg, transparent 0 15px, rgba(0, 48, 107, 0.34) 15px 16px, transparent 16px 31px),
-    repeating-linear-gradient(-45deg, transparent 0 15px, rgba(212, 101, 4, 0.35) 15px 16px, transparent 16px 31px);
-  clip-path: polygon(18% 0, 100% 0, 100% 86%, 68% 100%, 36% 74%, 0 36%);
-  mask-image: radial-gradient(circle at 100% 0, rgba(0, 0, 0, 0.9) 0 24%, rgba(0, 0, 0, 0.6) 42%, rgba(0, 0, 0, 0.3) 60%, transparent 79%);
-  -webkit-mask-image: radial-gradient(circle at 100% 0, rgba(0, 0, 0, 0.9) 0 24%, rgba(0, 0, 0, 0.6) 42%, rgba(0, 0, 0, 0.3) 60%, transparent 79%);
-  opacity: 0.78;
+    repeating-linear-gradient(45deg, transparent 0 24px, rgba(243, 223, 198, 0.82) 24px 26px, transparent 26px 50px),
+    repeating-linear-gradient(-45deg, transparent 0 24px, rgba(243, 223, 198, 0.82) 24px 26px, transparent 26px 50px),
+    repeating-linear-gradient(45deg, transparent 0 15px, rgba(243, 223, 198, 0.5) 15px 16px, transparent 16px 31px),
+    repeating-linear-gradient(-45deg, transparent 0 15px, rgba(243, 223, 198, 0.5) 15px 16px, transparent 16px 31px);
+  mask-image: radial-gradient(circle at 100% 0, rgba(0, 0, 0, 0.88) 0 22%, rgba(0, 0, 0, 0.58) 38%, rgba(0, 0, 0, 0.24) 55%, transparent 74%);
+  -webkit-mask-image: radial-gradient(circle at 100% 0, rgba(0, 0, 0, 0.88) 0 22%, rgba(0, 0, 0, 0.58) 38%, rgba(0, 0, 0, 0.24) 55%, transparent 74%);
+  opacity: 0.7;
   z-index: 0;
   pointer-events: none;
 }
@@ -302,15 +302,31 @@ header p {
 }
 
 nav {
-  background: rgba(15, 15, 20, 0.98);
+  background: rgba(0, 31, 71, 0.95);
   padding: 1.5rem;
   text-align: center;
   position: sticky;
   top: 0;
   z-index: 100;
   backdrop-filter: blur(15px);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.5), inset 0 1px 0 rgba(212, 101, 4, 0.14);
-  border-bottom: 1px solid rgba(212, 101, 4, 0.24);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5), inset 0 1px 0 rgba(243, 223, 198, 0.2);
+  border-bottom: 1px solid rgba(243, 223, 198, 0.24);
+  overflow: hidden;
+}
+
+nav::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(45deg, transparent 0 22px, rgba(243, 223, 198, 0.42) 22px 24px, transparent 24px 46px),
+    repeating-linear-gradient(-45deg, transparent 0 22px, rgba(243, 223, 198, 0.42) 22px 24px, transparent 24px 46px),
+    repeating-linear-gradient(45deg, transparent 0 14px, rgba(243, 223, 198, 0.2) 14px 15px, transparent 15px 29px),
+    repeating-linear-gradient(-45deg, transparent 0 14px, rgba(243, 223, 198, 0.2) 14px 15px, transparent 15px 29px);
+  mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 0 18%, rgba(0, 0, 0, 0.45) 46%, rgba(0, 0, 0, 0.8) 100%);
+  -webkit-mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 0 18%, rgba(0, 0, 0, 0.45) 46%, rgba(0, 0, 0, 0.8) 100%);
+  opacity: 0.6;
+  pointer-events: none;
 }
 
 nav a {
@@ -326,6 +342,7 @@ nav a {
   border-radius: 4px;
   display: inline-block;
   position: relative;
+  z-index: 1;
   background: rgba(212, 101, 4, 0.08);
   text-transform: uppercase;
   letter-spacing: 1px;
