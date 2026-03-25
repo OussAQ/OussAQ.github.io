@@ -238,7 +238,10 @@ header {
 header::before {
   content: '';
   position: absolute;
-  inset: 0;
+  left: 0;
+  bottom: 0;
+  width: min(620px, 52%);
+  height: 88%;
   background:
     repeating-linear-gradient(45deg, transparent 0 34px, rgba(217, 194, 160, 0.95) 34px 37px, transparent 37px 71px),
     repeating-linear-gradient(-45deg, transparent 0 34px, rgba(217, 194, 160, 0.95) 34px 37px, transparent 37px 71px),
@@ -246,8 +249,8 @@ header::before {
     repeating-linear-gradient(-45deg, transparent 0 22px, rgba(217, 194, 160, 0.8) 22px 24px, transparent 24px 46px),
     repeating-linear-gradient(45deg, transparent 0 14px, rgba(217, 194, 160, 0.62) 14px 15px, transparent 15px 29px),
     repeating-linear-gradient(-45deg, transparent 0 14px, rgba(217, 194, 160, 0.62) 14px 15px, transparent 15px 29px),
-    linear-gradient(42deg, rgba(255, 255, 255, 0) 58%, rgba(255, 255, 255, 0.75) 82%, rgba(255, 255, 255, 1) 94%),
-    radial-gradient(circle at 0 100%, rgba(255, 255, 255, 0) 0 28%, rgba(255, 255, 255, 0.4) 58%, rgba(255, 255, 255, 1) 90%);
+    linear-gradient(90deg, rgba(255, 255, 255, 0) 58%, rgba(255, 255, 255, 1) 97%),
+    radial-gradient(circle at 0 100%, rgba(255, 255, 255, 0) 0 26%, rgba(255, 255, 255, 0.35) 58%, rgba(255, 255, 255, 1) 92%);
   opacity: 0.98;
   z-index: 0;
   pointer-events: none;
@@ -258,14 +261,15 @@ header::after {
   position: absolute;
   top: -2%;
   right: 0;
-  width: min(380px, 32%);
-  height: 46%;
+  width: min(340px, 28%);
+  height: 42%;
   background:
     repeating-linear-gradient(45deg, transparent 0 26px, rgba(217, 194, 160, 0.8) 26px 28px, transparent 28px 54px),
     repeating-linear-gradient(-45deg, transparent 0 26px, rgba(217, 194, 160, 0.8) 26px 28px, transparent 28px 54px),
     repeating-linear-gradient(45deg, transparent 0 16px, rgba(217, 194, 160, 0.52) 16px 17px, transparent 17px 33px),
     repeating-linear-gradient(-45deg, transparent 0 16px, rgba(217, 194, 160, 0.52) 16px 17px, transparent 17px 33px),
-    radial-gradient(circle at 100% 0, rgba(255, 255, 255, 0) 0 30%, rgba(255, 255, 255, 0.68) 66%, rgba(255, 255, 255, 1) 92%);
+    linear-gradient(270deg, rgba(255, 255, 255, 0) 52%, rgba(255, 255, 255, 1) 96%),
+    radial-gradient(circle at 100% 0, rgba(255, 255, 255, 0) 0 28%, rgba(255, 255, 255, 0.5) 58%, rgba(255, 255, 255, 1) 90%);
   opacity: 0.85;
   z-index: 0;
   pointer-events: none;
@@ -312,13 +316,34 @@ nav {
 nav::before {
   content: '';
   position: absolute;
-  inset: 0;
+  left: 0;
+  top: 0;
+  width: 40%;
+  height: 100%;
   background:
     repeating-linear-gradient(45deg, transparent 0 22px, rgba(217, 194, 160, 0.5) 22px 24px, transparent 24px 46px),
     repeating-linear-gradient(-45deg, transparent 0 22px, rgba(217, 194, 160, 0.5) 22px 24px, transparent 24px 46px),
     repeating-linear-gradient(45deg, transparent 0 14px, rgba(217, 194, 160, 0.26) 14px 15px, transparent 15px 29px),
-    repeating-linear-gradient(-45deg, transparent 0 14px, rgba(217, 194, 160, 0.26) 14px 15px, transparent 15px 29px);
+    repeating-linear-gradient(-45deg, transparent 0 14px, rgba(217, 194, 160, 0.26) 14px 15px, transparent 15px 29px),
+    linear-gradient(90deg, rgba(0, 31, 71, 0) 56%, rgba(0, 31, 71, 0.96) 96%);
   opacity: 0.72;
+  pointer-events: none;
+}
+
+nav::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 26%;
+  height: 100%;
+  background:
+    repeating-linear-gradient(45deg, transparent 0 22px, rgba(217, 194, 160, 0.44) 22px 24px, transparent 24px 46px),
+    repeating-linear-gradient(-45deg, transparent 0 22px, rgba(217, 194, 160, 0.44) 22px 24px, transparent 24px 46px),
+    repeating-linear-gradient(45deg, transparent 0 14px, rgba(217, 194, 160, 0.22) 14px 15px, transparent 15px 29px),
+    repeating-linear-gradient(-45deg, transparent 0 14px, rgba(217, 194, 160, 0.22) 14px 15px, transparent 15px 29px),
+    linear-gradient(270deg, rgba(0, 31, 71, 0) 58%, rgba(0, 31, 71, 0.96) 96%);
+  opacity: 0.64;
   pointer-events: none;
 }
 
