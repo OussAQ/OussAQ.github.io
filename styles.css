@@ -11,7 +11,7 @@
   --theme-orange: #d46504;
   --theme-orange-soft: #f29c4b;
   --theme-cream: #fff3e6;
-  --theme-diamond-cream: #f3dfc6;
+  --theme-diamond-cream: #d9c2a0;
   --theme-surface: rgba(255, 247, 239, 0.95);
   --theme-surface-strong: #fff8f1;
   --theme-border: rgba(212, 101, 4, 0.26);
@@ -240,19 +240,15 @@ header::before {
   position: absolute;
   inset: 0;
   background:
-    repeating-linear-gradient(45deg, transparent 0 31px, rgba(243, 223, 198, 0.95) 31px 34px, transparent 34px 65px),
-    repeating-linear-gradient(-45deg, transparent 0 31px, rgba(243, 223, 198, 0.95) 31px 34px, transparent 34px 65px),
-    repeating-linear-gradient(45deg, transparent 0 20px, rgba(243, 223, 198, 0.7) 20px 22px, transparent 22px 42px),
-    repeating-linear-gradient(-45deg, transparent 0 20px, rgba(243, 223, 198, 0.7) 20px 22px, transparent 22px 42px),
-    repeating-linear-gradient(45deg, transparent 0 13px, rgba(243, 223, 198, 0.48) 13px 14px, transparent 14px 27px),
-    repeating-linear-gradient(-45deg, transparent 0 13px, rgba(243, 223, 198, 0.48) 13px 14px, transparent 14px 27px);
-  mask-image:
-    radial-gradient(circle at 0 100%, rgba(0, 0, 0, 0.98) 0 23%, rgba(0, 0, 0, 0.85) 38%, rgba(0, 0, 0, 0.58) 55%, rgba(0, 0, 0, 0.24) 70%, transparent 87%),
-    linear-gradient(45deg, rgba(0, 0, 0, 0.98) 0 58%, rgba(0, 0, 0, 0.55) 74%, transparent 92%);
-  -webkit-mask-image:
-    radial-gradient(circle at 0 100%, rgba(0, 0, 0, 0.98) 0 23%, rgba(0, 0, 0, 0.85) 38%, rgba(0, 0, 0, 0.58) 55%, rgba(0, 0, 0, 0.24) 70%, transparent 87%),
-    linear-gradient(45deg, rgba(0, 0, 0, 0.98) 0 58%, rgba(0, 0, 0, 0.55) 74%, transparent 92%);
-  opacity: 0.88;
+    repeating-linear-gradient(45deg, transparent 0 34px, rgba(217, 194, 160, 0.95) 34px 37px, transparent 37px 71px),
+    repeating-linear-gradient(-45deg, transparent 0 34px, rgba(217, 194, 160, 0.95) 34px 37px, transparent 37px 71px),
+    repeating-linear-gradient(45deg, transparent 0 22px, rgba(217, 194, 160, 0.8) 22px 24px, transparent 24px 46px),
+    repeating-linear-gradient(-45deg, transparent 0 22px, rgba(217, 194, 160, 0.8) 22px 24px, transparent 24px 46px),
+    repeating-linear-gradient(45deg, transparent 0 14px, rgba(217, 194, 160, 0.62) 14px 15px, transparent 15px 29px),
+    repeating-linear-gradient(-45deg, transparent 0 14px, rgba(217, 194, 160, 0.62) 14px 15px, transparent 15px 29px),
+    linear-gradient(42deg, rgba(255, 255, 255, 0) 58%, rgba(255, 255, 255, 0.75) 82%, rgba(255, 255, 255, 1) 94%),
+    radial-gradient(circle at 0 100%, rgba(255, 255, 255, 0) 0 28%, rgba(255, 255, 255, 0.4) 58%, rgba(255, 255, 255, 1) 90%);
+  opacity: 0.98;
   z-index: 0;
   pointer-events: none;
 }
@@ -265,13 +261,12 @@ header::after {
   width: min(380px, 32%);
   height: 46%;
   background:
-    repeating-linear-gradient(45deg, transparent 0 24px, rgba(243, 223, 198, 0.82) 24px 26px, transparent 26px 50px),
-    repeating-linear-gradient(-45deg, transparent 0 24px, rgba(243, 223, 198, 0.82) 24px 26px, transparent 26px 50px),
-    repeating-linear-gradient(45deg, transparent 0 15px, rgba(243, 223, 198, 0.5) 15px 16px, transparent 16px 31px),
-    repeating-linear-gradient(-45deg, transparent 0 15px, rgba(243, 223, 198, 0.5) 15px 16px, transparent 16px 31px);
-  mask-image: radial-gradient(circle at 100% 0, rgba(0, 0, 0, 0.88) 0 22%, rgba(0, 0, 0, 0.58) 38%, rgba(0, 0, 0, 0.24) 55%, transparent 74%);
-  -webkit-mask-image: radial-gradient(circle at 100% 0, rgba(0, 0, 0, 0.88) 0 22%, rgba(0, 0, 0, 0.58) 38%, rgba(0, 0, 0, 0.24) 55%, transparent 74%);
-  opacity: 0.7;
+    repeating-linear-gradient(45deg, transparent 0 26px, rgba(217, 194, 160, 0.8) 26px 28px, transparent 28px 54px),
+    repeating-linear-gradient(-45deg, transparent 0 26px, rgba(217, 194, 160, 0.8) 26px 28px, transparent 28px 54px),
+    repeating-linear-gradient(45deg, transparent 0 16px, rgba(217, 194, 160, 0.52) 16px 17px, transparent 17px 33px),
+    repeating-linear-gradient(-45deg, transparent 0 16px, rgba(217, 194, 160, 0.52) 16px 17px, transparent 17px 33px),
+    radial-gradient(circle at 100% 0, rgba(255, 255, 255, 0) 0 30%, rgba(255, 255, 255, 0.68) 66%, rgba(255, 255, 255, 1) 92%);
+  opacity: 0.85;
   z-index: 0;
   pointer-events: none;
 }
@@ -319,13 +314,11 @@ nav::before {
   position: absolute;
   inset: 0;
   background:
-    repeating-linear-gradient(45deg, transparent 0 22px, rgba(243, 223, 198, 0.42) 22px 24px, transparent 24px 46px),
-    repeating-linear-gradient(-45deg, transparent 0 22px, rgba(243, 223, 198, 0.42) 22px 24px, transparent 24px 46px),
-    repeating-linear-gradient(45deg, transparent 0 14px, rgba(243, 223, 198, 0.2) 14px 15px, transparent 15px 29px),
-    repeating-linear-gradient(-45deg, transparent 0 14px, rgba(243, 223, 198, 0.2) 14px 15px, transparent 15px 29px);
-  mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 0 18%, rgba(0, 0, 0, 0.45) 46%, rgba(0, 0, 0, 0.8) 100%);
-  -webkit-mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 0 18%, rgba(0, 0, 0, 0.45) 46%, rgba(0, 0, 0, 0.8) 100%);
-  opacity: 0.6;
+    repeating-linear-gradient(45deg, transparent 0 22px, rgba(217, 194, 160, 0.5) 22px 24px, transparent 24px 46px),
+    repeating-linear-gradient(-45deg, transparent 0 22px, rgba(217, 194, 160, 0.5) 22px 24px, transparent 24px 46px),
+    repeating-linear-gradient(45deg, transparent 0 14px, rgba(217, 194, 160, 0.26) 14px 15px, transparent 15px 29px),
+    repeating-linear-gradient(-45deg, transparent 0 14px, rgba(217, 194, 160, 0.26) 14px 15px, transparent 15px 29px);
+  opacity: 0.72;
   pointer-events: none;
 }
 
