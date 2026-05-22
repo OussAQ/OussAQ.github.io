@@ -42,7 +42,7 @@ const translations = {
       location: "Location:"
     },
     footer: {
-      copyright: "© 2025 Oussama Aqebli. All rights reserved."
+      copyright: "© 2025–2026 Oussama Aqebli. All rights reserved."
     },
     // About page
     about: {
@@ -146,7 +146,7 @@ const translations = {
       location: "Localisation :"
     },
     footer: {
-      copyright: "© 2025 Oussama Aqebli. Tous droits réservés."
+      copyright: "© 2025–2026 Oussama Aqebli. Tous droits réservés."
     },
     // About page
     about: {
